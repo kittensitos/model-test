@@ -2,7 +2,7 @@
 
 Uses scikit-learn's bundled diabetes dataset (442 patients, 10 clinical
 features, target = disease progression one year later). To use your own
-data, replace load_data() with something that returns (X, y) — e.g. read
+data, replace load_data() with something that returns (X, y) — ex: read
 a CSV with pandas and split it into feature columns and a target column.
 
 Run:  python3 train.py

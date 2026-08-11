@@ -70,7 +70,7 @@ def load_data():
 
 Everything downstream (split, fit, metrics, plot, saved model) works unchanged.
 Features must be numeric; encode categorical columns first
-(e.g. `pd.get_dummies`).
+(ex: `pd.get_dummies`).
 
 ## Making predictions with the saved model
 

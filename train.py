@@ -1,10 +1,4 @@
 """Train and evaluate a linear regression model.
-
-Uses scikit-learn's bundled diabetes dataset (442 patients, 10 clinical
-features, target = disease progression one year later). To use your own
-data, replace load_data() with something that returns (X, y) — ex: read
-a CSV with pandas and split it into feature columns and a target column.
-
 Run:  python3 train.py
 Outputs: metrics printed to stdout, model.joblib, predicted_vs_actual.png
 """
@@ -25,12 +19,6 @@ RANDOM_STATE = 42
 
 
 def load_data():
-    """Return (X, y) as a DataFrame of features and a Series target.
-
-    Swap this out for your own dataset, e.g.:
-        df = pd.read_csv("my_data.csv")
-        return df.drop(columns=["target"]), df["target"]
-    """
     data = load_diabetes(as_frame=True)
     return data.data, data.target
 
@@ -40,8 +28,6 @@ def main():
     print(f"Dataset: {X.shape[0]} rows, {X.shape[1]} features")
     print(f"Features: {', '.join(X.columns)}\n")
 
-    # Hold out 20% of the data the model never sees during training,
-    # so the metrics measure generalization rather than memorization.
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=RANDOM_STATE
     )
